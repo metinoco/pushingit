@@ -1,5 +1,13 @@
 describe('Actividad complementaria 7', () => { 
     
+    let datos ;
+
+    before(() => {
+        cy.fixture("datos").then(data => 
+            datos = data   
+        )
+    });
+    
     beforeEach("Actividad complementaria 7", () => {
        cy.visit('');
        cy.get("#registertoggle").dblclick()
@@ -7,10 +15,11 @@ describe('Actividad complementaria 7', () => {
        cy.get('#pass').type('123456!')
        cy.get('#submitForm').click()
        cy.xpath(`//h2[starts-with(@id,'user_pushingit')]`).should('exist')
-       cy.contains('To Do List').click()
+       cy.contains('To Do List').click().wait(1000)
    })
 
      it("Deberia sacar una foto completa", () =>{
+        cy.get('[data-cy="removeAll"]').click().wait(2000);
        //agregar 3 tareas y sacar una foto a la pantalla completa
         cy.get('[name=task]').type(datos.tareas.tarea1);
         cy.get('[data-cy="sendTask"]').click().wait(1000);
@@ -26,6 +35,7 @@ describe('Actividad complementaria 7', () => {
  
    it("Deberia sacar una foto a las tres tareas", () =>{
        //agregar 3 tareas y sacar una foto a las tareas (las 3 tareas en la misma foto - cuadro celeste)
+       cy.get('#root > div > div.css-ha1fhc > ul > div').screenshot("");
    })
 })
 
