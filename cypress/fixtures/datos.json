@@ -1,0 +1,23 @@
+{
+    "tareas": {
+        "tarea1": "Crear el script",
+        "tarea2": "Abrir test con cypress open",
+        "tarea3": "Revisar los logs del test",
+        "tarea4": "Tomar captura de pantalla",
+        "tarea5": "Enviar tarea a Fabri"
+    },
+
+    "username": {
+        "user": "Monshy1",
+        "pass": "123456!"
+    },
+
+    "username2":{
+        "user": "Monshy",
+        "pass": "1234567!"
+    },
+
+    "msgError": {
+        "ErrorMsg": "Credentials were not found"
+    }
+}
